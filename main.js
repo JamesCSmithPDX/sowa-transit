@@ -1,5 +1,7 @@
 var appId = '696352A33349534EC937D8CB3'
-var locationId = ['13185', '12760']
+var sowaLocationId = ['13185', '12760', '12880', '12883', '12845']
+var tilikumLocationIDs = ['13732', '13711', '13728', '13733', '13601', '13602'];
+
 
 var arrivalTimes = function(locationId){
     console.log(locationId);
@@ -12,4 +14,5 @@ var arrivalTimes = function(locationId){
     });
   };
 
-locationId.forEach(arrivalTimes)
+sowaLocationId.forEach(arrivalTimes);
+tilikumLocationIDs.forEach(arrivalTimes);

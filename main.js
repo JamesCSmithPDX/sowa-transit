@@ -1,5 +1,5 @@
 var appId = '696352A33349534EC937D8CB3'
-var sowaLocationId = ['13185', '12760', '12880', '12883', '12845']
+var sowaLocationId = ['13185', '12760', '12880', '12883']
 var tilikumLocationIDs = ['13732', '13711', '13728', '13733', '13601', '13602'];
 
 
@@ -23,10 +23,15 @@ sowaLocationId.forEach(arrivalTimes);
 tilikumLocationIDs.forEach(arrivalTimes);
 
 function logArrayElements(element, index, array) {
-  console.log('a[' + index + '] = ' + element);
+    var htmlId = element.locid;
+    var appTemplate = $('#sowa-template').html()
+    var compiledTemplate = Handlebars.compile(appTemplate);
+    var html = compiledTemplate(element);
+    $('.' + htmlId).append(html);
 };
 
-getArrivals = function(data){
+getArrivals = function(data) {
   var arrivalArray = data.resultSet.arrival;
+  console.log(arrivalArray);
   arrivalArray.forEach(logArrayElements);
 };

@@ -5,17 +5,43 @@
     <script id="sowa-template" type="text/x-handlebars-template">
     Stop ID: {{locid}}: {{shortSign}}, Scheduled: {{scheduled}} </br>
   </script>
+
+  <script id="tilikum-template" type="text/x-handlebars-template">
+  Stop ID: {{locid}}: {{shortSign}}, Scheduled: {{scheduled}} </br>
+</script>
+
 </head>
 <body>
-<h2>Heading Downtown</h2>
-  <div class="13185">Stop ID 13185</br>
+<h2>Departing to Downtown</h2>
+  <div class="13185">BUS</br>
 SW Macadam & Tram Tower (Northbound)</br></div>
+<div class="12883">STREETCAR</br>
+OHSU Commons</br></div>
 
-<h2>Heading South</h2>
+<h2>Arriving from Downtown Heading South</h2>
+<div class="13601">Stop ID 13601</br>
+SW Moody & Meade</br></div>
   <div class="12760">Stop ID 12760</br>
-  SW Moody & Gibbs Southbound (Northbound to Downtown)</br></div>
+  SW Moody & Gibbs</br></div>
+  <div class="12880">Stop ID 12880</br>
+  SW Moody & Gaines</br></div>
 
-<div class="tilikum"></div>
+<div class="tilikum">
+  <h2>Heading East Over Bridge</h2>
+    <div class="13732 13711">BUS & MAX</br>
+    Tilikum Bridge Eastbound Platform</br></div>
+
+  <h2>Heading Downtown From Bridge</h2>
+    <div class="13728 13733">BUS & MAX</br>
+    Tilikum Bridge Eastbound Platform</br></div>
+    <div class="13602">STREETCAR</br>
+    Moody & Meade (Skourtes Tower)</br></div>
+
+
+  <!-- <h2>Heading South</h2>
+    <div class="12760">Stop ID 12760</br>
+    SW Moody & Gibbs Southbound (Northbound to Downtown)</br></div>
+</div> -->
 
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>

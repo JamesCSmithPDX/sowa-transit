@@ -3,11 +3,11 @@
   <meta charset="UTF-8">
   <title>SoWa Transit</title>
     <script id="sowa-template" type="text/x-handlebars-template">
-    Stop ID: {{locid}}: {{shortSign}}, Scheduled: {{scheduled}} </br>
+    Stop ID: {{locid}}: {{shortSign}}, Next: {{estimated}} </br>
   </script>
 
   <script id="tilikum-template" type="text/x-handlebars-template">
-  Stop ID: {{locid}}: {{shortSign}}, Scheduled: {{scheduled}} </br>
+  Stop ID: {{locid}}: {{shortSign}},  Next: {{estimated}} </br>
 </script>
 
 </head>
@@ -42,7 +42,7 @@ SW Moody & Meade</br></div>
     <div class="12760">Stop ID 12760</br>
     SW Moody & Gibbs Southbound (Northbound to Downtown)</br></div>
 </div> -->
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="main.js"> </script>

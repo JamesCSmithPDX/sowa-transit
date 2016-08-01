@@ -1,7 +1,8 @@
 var appId = '696352A33349534EC937D8CB3'
 var sowaLocationId = ['13185', '12760', '12880', '12883', '13601', ]
 var tilikumLocationIDs = ['13732', '13711', '13728', '13733', '13602'];
-
+var sowaArrivals = [];
+var tilikumArrivals = [];
 
 var arrivalTimes = function(locationId, index, arr) {
 
@@ -42,11 +43,18 @@ function postSchedule(element, index, array, myClass) {
     $('.' + htmlId).append(html);
 };
 
+function fixTime(a) {
+  time = a.estimated;
+  var fixTime = moment(time).format('h:mm:ss a');
+  a.estimated = fixTime;
+  };
+
 getArrivals = function(data, myClass) {
   var arrivalArray = data.resultSet.arrival;
+
   if (myClass = "sowa") {
-    console.log(arrivalArray);
-    arrivalArray.forEach(logArrayElements);
+    arrivalArray.forEach(fixTime);
+    arrivalArray.forEach(sowaArrivals.push());
   } else {
     arrivalArray.forEach(logTilikumElements);
   }

@@ -4,14 +4,14 @@ var requestProxy = require('express-request-proxy'),
   app = express();
 
 var proxyGitHub = function(request, response) {
-  console.log('Routing GitHub request for', request.params[0]);
+  console.log('Routing CocktailDB request for', request.params[0]);
   (requestProxy({
-    url: 'https://api.github.com/' + request.params[0],
-    headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN }
+    url: 'http://www.thecocktaildb.com/api/json/v1/1/' + request.params[0],
+    //headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN }
   }))(request, response);
 };
 
-app.get('/github/*', proxyGitHub);
+app.get('/drinks/*', proxyGitHub);
 
 app.use(express.static('./'));
 

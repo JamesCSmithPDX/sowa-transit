@@ -60,11 +60,11 @@ getArrivals = function(data, myClass) {
 
   if (myClass = "sowa") {
     arrivalArray.forEach(fixTime);
-    pushArray(sowaArrivals, arrivalArray);
+    // pushArray(sowaArrivals, arrivalArray);
 
   } else {
     arrivalArray.forEach(fixTime);
-    pushArray(tilikumArrivals, arrivalArray);
+    // pushArray(tilikumArrivals, arrivalArray);
   }
 };
 
@@ -77,7 +77,6 @@ function pushArray(arr, arr2) {
 };
 
 function pageInit() {
-  sowaArrivals.forEach(pushArray);
   sowaArrivals.forEach(logArrayElements);
   tilikumArrivals.forEach(logTilikumElements);
 };

@@ -1,0 +1,15 @@
+{
+  "name": "sowa-transit",
+  "version": "1.0.0",
+  "description": "soth-waterfront-transit-app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James C Smith",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  }
+}

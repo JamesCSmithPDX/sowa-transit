@@ -77,6 +77,7 @@ function pushArray(arr, arr2) {
 };
 
 function pageInit() {
+  sowaArrivals.forEach(pushArray);
   sowaArrivals.forEach(logArrayElements);
   tilikumArrivals.forEach(logTilikumElements);
 };

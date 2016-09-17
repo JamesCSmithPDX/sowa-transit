@@ -17,7 +17,6 @@ var arrivalTimes = function(locationId, index, arr) {
             } else {
                 var myClass = 'tilikum'
                 getArrivals(data, myClass);
-                callback();
             };
         }
     });
@@ -25,12 +24,13 @@ var arrivalTimes = function(locationId, index, arr) {
 
 
 
-function setPage(callback) {
+function setPage() {
+console.log('In setPage');
 sowaLocationId.forEach(arrivalTimes);
 tilikumLocationIDs.forEach(arrivalTimes);
 };
-
-
+//
+//
 function logArrayElements(element, index, array) {
       var myClass = '#sowa-template';
       postSchedule(element, index, array, myClass);
@@ -56,15 +56,21 @@ function fixTime(a) {
   };
 
 getArrivals = function(data, myClass) {
+  console.log('In getArrivals');
   var arrivalArray = data.resultSet.arrival;
+  console.log(arrivalArray);
 
   if (myClass = "sowa") {
     arrivalArray.forEach(fixTime);
-    // pushArray(sowaArrivals, arrivalArray);
+    pushArray(sowaArrivals, arrivalArray);
+    console.log(sowaArrivals);
+    // arrivalArray.forEach(logArrayElements);
 
   } else {
     arrivalArray.forEach(fixTime);
-    // pushArray(tilikumArrivals, arrivalArray);
+    pushArray(tilikumArrivals, arrivalArray);
+    console.log(tilikumArrivals);
+    // arrivalArray.forEach(logTilikumElements);
   }
 };
 
@@ -76,9 +82,4 @@ function pushArray(arr, arr2) {
   });
 };
 
-function pageInit() {
-  sowaArrivals.forEach(logArrayElements);
-  tilikumArrivals.forEach(logTilikumElements);
-};
-
-setPage(pageInit);
+setPage();

@@ -10,10 +10,10 @@ var arrivalTimes = function(locationId, index, arr) {
         method: 'GET',
         url: 'https://developer.trimet.org/ws/V1/arrivals/json/true/streetcar/true/locIDs/' + locationId + '/appID/' + appId,
         success: function(data, message, xhr) {
+            console.log();
             if (arr == sowaLocationId) {
                 var myClass = 'sowa'
                 getArrivals(data, myClass);
-                //getSowaTemplate();
             } else {
                 var myClass = 'tilikum'
                 getArrivals(data, myClass);
@@ -24,13 +24,13 @@ var arrivalTimes = function(locationId, index, arr) {
 
 
 
-function setPage() {
-console.log('In setPage');
-sowaLocationId.forEach(arrivalTimes);
-tilikumLocationIDs.forEach(arrivalTimes);
-};
-//
-//
+// function setPage() {
+// console.log('In setPage');
+// sowaLocationId.forEach(arrivalTimes);
+// tilikumLocationIDs.forEach(arrivalTimes);
+// };
+
+
 function logArrayElements(element, index, array) {
       var myClass = '#sowa-template';
       postSchedule(element, index, array, myClass);
@@ -56,9 +56,8 @@ function fixTime(a) {
   };
 
 getArrivals = function(data, myClass) {
-  console.log('In getArrivals');
+  console.log(myClass);
   var arrivalArray = data.resultSet.arrival;
-  console.log(arrivalArray);
 
   if (myClass = "sowa") {
     arrivalArray.forEach(fixTime);
@@ -69,7 +68,7 @@ getArrivals = function(data, myClass) {
   } else {
     arrivalArray.forEach(fixTime);
     pushArray(tilikumArrivals, arrivalArray);
-    console.log(tilikumArrivals);
+    console.log('tilikum' + tilikumArrivals);
     // arrivalArray.forEach(logTilikumElements);
   }
 };
@@ -82,4 +81,10 @@ function pushArray(arr, arr2) {
   });
 };
 
-setPage();
+sowaLocationId.forEach(arrivalTimes);
+tilikumLocationIDs.forEach(arrivalTimes);
+
+function postData() {
+  sowaArrivals.foreach(logArrayElements);
+  tilikumArrivals.forEach(logTilikumElements);
+};

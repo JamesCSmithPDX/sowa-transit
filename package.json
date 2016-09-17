@@ -9,7 +9,9 @@
   "author": "James C Smith",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.0.1",
     "express": "^4.13.3",
-    "express-request-proxy": "^1.0.10"
+    "express-request-proxy": "^1.0.10",
+    "lodash": "^4.15.0"
   }
 }
